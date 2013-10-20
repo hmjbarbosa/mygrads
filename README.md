@@ -80,6 +80,14 @@ drawrec.gs
 
         Draw a rectangle on the screen using world coordinates.
 
+drawpoly.gs
+
+        Draw a polygon on the screen using world coordinates.
+
+handpoly.gs
+
+        Draw a polygon by hand, i.e., by clicking on the screen.
+
 textbox.gs
 
         Draws a box in the figure with a text inside with shortcuts
