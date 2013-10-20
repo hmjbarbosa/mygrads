@@ -1,0 +1,110 @@
+**********************************************************************
+* HMJBARBOSA 5 August 2004
+* This scprit selects all different values of a field in a given
+* area. It writes the output to the screen so that the user can
+* capture the result using subwrd() and sublin().
+*
+* Input arguments are: field loni lonf lati latf
+* Output: The returning value of the function is the number of
+*   values and a global variable _mapval stores the read values.
+**********************************************************************
+
+function mapval(args)
+
+fild=subwrd(args,1)
+loni=subwrd(args,2)
+lonf=subwrd(args,3)
+lati=subwrd(args,4)
+latf=subwrd(args,5)
+
+**********************************************************************
+* find region in grid coordinates
+**********************************************************************
+if (loni!='' & lonf!='' & lati!='' & latf!='')
+  'set lon 'loni' 'lonf
+  'set lat 'lati' 'latf
+endif
+
+'q dims'
+lin=sublin(result,2)
+if (subwrd(lin,3)='fixed')
+  xi=subwrd(lin,9)
+  xf=xi
+else
+  xi=subwrd(lin,11)    
+  xf=subwrd(lin,13)    
+endif
+lin=sublin(result,3)
+if (subwrd(lin,3)='fixed')
+  yi=subwrd(lin,9)
+  yf=yi
+else
+  yi=subwrd(lin,11)    
+  yf=subwrd(lin,13)    
+endif
+
+**********************************************************************
+* loop over region and find different values
+**********************************************************************
+
+nvals=0
+
+i=xi
+while(i<=xf)
+  j=yi
+  while (j<=yf)
+    'set x 'i
+    'set y 'j
+    'd 'fild''
+    res=subwrd(result,4)
+* by default, include new value into list
+    ok=1
+
+* loop over the list and check to see if it is already included
+    k=1
+    while (k<=nvals)
+
+*  if values is include, set ok to false (0)
+      if (_mapval.k=res) 
+        ok=0
+      endif
+      k=k+1
+    endwhile
+
+* if this is a new value, than include in list
+    if (ok)
+      nvals=nvals+1
+      _mapval.nvals=res
+    endif
+    j=j+1
+  endwhile
+  i=i+1
+endwhile
+
+'set x 'xi' 'xf''
+'set y 'yi' 'yf''
+
+**********************************************************************
+* sort values from low to high (using buble sort)
+**********************************************************************
+max=nvals
+while (max!=1)
+  i=1
+  j=2
+  while (j<=max)
+    if (_mapval.i > _mapval.j)
+      temp=_mapval.i
+      _mapval.i=_mapval.j
+      _mapval.j=temp
+    endif
+    i=j
+    j=j+1
+  endwhile
+  max=max-1
+endwhile
+
+return nvals
+
+
+
+

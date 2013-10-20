@@ -106,6 +106,12 @@ xdfopenall.gs
 ___________________________________________________________________________
 FUNCTIONS
 
+mapval.gsf
+
+        Selects all different values of a field in a given area. The
+        returning value of the function is the number of values and a
+        global variable _mapval stores is defined to keep the values.
+
 grepfile.gsf
  
         Function grepfile can be used to grep only those lines from a
