@@ -1,0 +1,12 @@
+function isnumber(a)
+n=strlen(a)
+i=1; ok=1
+while(i<=n)
+  c=substr(a,i,1)
+  if (c!='0'&c!='1'&c!='2'&c!='3'&c!='4'&c!='5'&c!='6'&c!='7'&c!='8'&c!='9'&c!='.')
+    ok=0; break
+  endif
+  i=i+1
+endwhile
+return(ok)
+*
