@@ -3,8 +3,8 @@ function pickcolors(args)
 * output instructions
 say 'pickcolors v0.13.10.20 by hbarbosa'
 say ' '
-say 'Draws a palette on the screen to allow the user to create a palette'
-say 'by looking how colors looks like. '
+say 'Draws a palette on the screen to allow the user to create a rainbow'
+say 'sequence by looking how colors looks like. '
 say ' '
 say 'Color Map: '
 say '   Click to select which pair of colors will be varied.'
