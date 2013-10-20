@@ -1,0 +1,41 @@
+function grepfile(pattern,file)
+
+if (pattern='' | file='')
+  say 'function grepfile(pattern, file)'
+  say ''
+  say 'Description: '
+  say '   Function grepfile can be used to grep only those lines from'
+  say '   a file that match a given pattern. The result is the number'
+  say '   of matching lines. The actual lines are stored in a global'
+  say '   vector named _grepfile'
+  say ''
+  say 'Example usage in a script: '
+  say ''
+  say '   nlines=grepfile("xdef","example.ctl")'
+  say ''
+  say '   say "Number of gridboxes along x is: "subwrd(_grepfile.1,2)'
+  exit
+endif
+
+crazi='/tmp/n1j2j3i4u5h6b7'
+
+'!grep -i 'pattern' 'file' > 'crazi
+rc=read(crazi)
+ok=sublin(rc,1)
+lin=sublin(rc,2)
+n=0
+while(ok=0)
+  n=n+1
+  _grepfile.n=lin
+
+  rc=read(crazi)
+  ok=sublin(rc,1)
+  lin=sublin(rc,2)
+endwhile
+rc=close(crazi)
+
+'!rm -f 'crazi
+
+return n
+
+*fim
