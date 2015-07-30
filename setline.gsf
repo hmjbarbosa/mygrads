@@ -1,0 +1,39 @@
+* setline.gfs
+* 
+* This function sets all line attibutes correctly
+*
+* Usage: drawline(color style thickness marker)
+*
+* Written by Henrique Barbosa July 2004
+*
+function setline(args)
+* Get arguments
+  if (args='') 
+    say 'setline requires 4 args: color style thickness marker'
+    say 'e.g. setline("1 # # 1") will set a white line without'
+    say 'markers. line style and thickness will not be changed'
+    return 
+  else 
+    cc = subwrd(args,1)
+    ss = subwrd(args,2)
+    tt = subwrd(args,3)
+    mm = subwrd(args,4)
+  endif
+*
+  if (mm!='' & mm!='#'); 'set cmark  'mm; endif
+  if (cc!='' & cc!='#'); 'set ccolor 'cc; endif
+  if (ss!='' & ss!='#'); 'set cstyle 'ss; endif
+  if (tt!='' & tt!='#'); 'set cthick 'tt; endif
+
+  if (cc!='' & cc!='#')
+    if (ss!='' & ss!='#')
+      if (tt!='' & tt!='#')
+        'set line 'cc' 'ss' 'tt
+      else
+        'set line 'cc' 'ss
+      endif
+    else
+      'set line 'cc
+    endif
+  endif
+return
