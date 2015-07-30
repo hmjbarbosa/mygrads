@@ -1,3 +1,4 @@
+function makebg(args)
 * makebg.gs
 *
 * This script creates a background image that shows topographic texture

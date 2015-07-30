@@ -1,6 +1,8 @@
 * HMJBarbosa Julho 2004
-* Script feito pela Diane Stokes e nao disponivel na pagina do grads.
-* Faz apenas uma barra em baixo de varios paineis.
+* Equivalente ao script cbarn2.gs, mas foi feito pela Diane Stokes
+* e consegue fazer 1 barra em baixo dos paneis de maneira bem
+* mais simples. Uso este script e nao o cbarn2.gs
+
 *
 *  Script to plot a colorbar
 *

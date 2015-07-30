@@ -20,6 +20,10 @@ lin =sublin(result,2); Bxa = subwrd(lin,6); Bxb = subwrd(lin,8)
 lin =sublin(result,3); Bya = subwrd(lin,6); Byb = subwrd(lin,8)
 
 * Test if user input within allowed dimensions
+if (Rya<Bya); Rya=Rya+360; endif
+if (Rya>Byb); Rya=Rya-360; endif
+if (Rxa<Bxa); Rxa=Rxa+360; endif
+if (Rxa>Bxb); Rxa=Rxa-360; endif
 if (Rya<Bya | Rya>Byb); say 'warn: lat='Rya' is outside range ['Bya','Byb']'; endif
 if (Rxa<Bxa | Rxa>Bxb); say 'warn: lon='Rxa' is outside range ['Bxa','Bxb']'; endif
 
