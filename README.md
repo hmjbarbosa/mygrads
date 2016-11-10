@@ -40,13 +40,22 @@ COLOR DEFINITIONS
 
 colors.gs
 
-        Changes the default rainbow color sequence interpolating
-        between two RGB colors.
+        Create a rainbow color sequence interpolating between two RGB
+        colors. User can choose number of colors and color id.
 
 pickcolors.gs
 
         Draws a palette on the screen to allow the user to create a
         rainbow sequence by looking how colors looks like.
+
+getcolors.m
+getcolors.jpg
+
+	MATLAB script to open an image file and read the RGB
+	values. The user defines a regular grid at which the colors
+	will be read. Useful for copying the RGB values of some nice
+	colorbar in an image so that you can use the same colors in
+	grads (try with getcolors.jpg).
 
 ___________________________________________________________________________
 DISPLAING VARIABLES
@@ -76,22 +85,48 @@ drawmark.gs
 
         Draws a marker on the screen using world coordinates.
 
-drawrec.gs
-
-        Draw a rectangle on the screen using world coordinates.
-
 drawpoly.gs
 
         Draw a polygon on the screen using world coordinates.
+
+drawrec.gs
+
+        Draw a rectangle on the screen using world coordinates.
 
 handpoly.gs
 
         Draw a polygon by hand, i.e., by clicking on the screen.
 
+hist.gs
+
+	Bin Guan's histogram function
+
 textbox.gs
 
         Draws a box in the figure with a text inside with shortcuts
         for positioning at the corners.
+
+___________________________________________________________________________
+CLIMATE/METEOROLOGY
+
+ensave.gs
+
+	Create a new variable as the average of the same variable
+	existing in multiple opened files.
+
+ensstdev.gs
+
+	Create a new variable as the standard deviation of the same
+	variable existing in multiple opened files.
+
+latinterp.gs
+loninterp.gs
+
+	Interpolates a field to an exact latitute or longitute
+
+windrose.gs
+
+	Draws a wind-rose from wind speed and direction
 
 ___________________________________________________________________________
 OPEN MANY FILE
