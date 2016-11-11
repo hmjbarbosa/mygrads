@@ -47,46 +47,8 @@ endif
 * loop over region and find different values
 **********************************************************************
 
-*nvals=0
-*limit=-1e20
-*while (1=1)
-*  'tmp=maskout('fild','fild'-('limit')-1e-9)'
-*  'd min(min(tmp,x='xi',x='xf'),y='yi',y='yf')'
-*  
-*  i=0; wrd=''
-*  while(wrd!='Result')
-*    i=i+1; lin=sublin(result,i)
-*    wrd=subwrd(lin,1)
-*  endwhile
-*  res=subwrd(lin,4)
-*
-*  if (res='-9.99e+08')
-*    break
-*  endif
-*
-** by default, include new value into list
-*  ok=1
-*  
-** loop over the list and check to see if it is already included
-*  k=1
-*  while (k<=nvals)
-**  if value is included, set ok to false (0)
-*    if (_mapval.k=res) 
-*      ok=0
-*    endif
-*    k=k+1
-*  endwhile
-*  
-** if this is a new value, than include in list
-*  if (ok)
-*    nvals=nvals+1
-*    _mapval.nvals=res
-*    limit=res
-*  endif
-*
-*endwhile
-
 nvals=0
+
 i=xi
 while(i<=xf)
   j=yi
@@ -97,6 +59,7 @@ while(i<=xf)
     res=subwrd(result,4)
 * by default, include new value into list
     ok=1
+
 * loop over the list and check to see if it is already included
     k=1
     while (k<=nvals)
@@ -112,7 +75,6 @@ while(i<=xf)
     if (ok)
       nvals=nvals+1
       _mapval.nvals=res
-say res
     endif
     j=j+1
   endwhile
