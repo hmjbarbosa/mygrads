@@ -128,6 +128,9 @@ windrose.gs
 
 	Draws a wind-rose from wind speed and direction
 
+qcoords.gs 
+ 
+	Let the user click in a map, an return the world coordinates. 
 ___________________________________________________________________________
 OPEN MANY FILE
 
