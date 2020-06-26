@@ -49,13 +49,13 @@ pickcolors.gs
         rainbow sequence by looking how colors looks like.
 
 getcolors.m
-getcolors.jpg
+getcolors.png
 
 	MATLAB script to open an image file and read the RGB
 	values. The user defines a regular grid at which the colors
 	will be read. Useful for copying the RGB values of some nice
 	colorbar in an image so that you can use the same colors in
-	grads (try with getcolors.jpg).
+	grads (try with getcolors.png).
 
 ___________________________________________________________________________
 DISPLAING VARIABLES
