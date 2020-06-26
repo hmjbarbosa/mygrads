@@ -1,0 +1,9 @@
+function arrow(x,y,len,scale)
+'set line 1 1 4'
+'draw line 'x-len/2.' 'y' 'x+len/2.' 'y
+'draw line 'x+len/2.-0.05' 'y+0.025' 'x+len/2.' 'y
+'draw line 'x+len/2.-0.05' 'y-0.025' 'x+len/2.' 'y
+*'set string 1 c'
+*'set strsiz 0.1'
+'draw string 'x' 'y-0.1' 'scale
+return
