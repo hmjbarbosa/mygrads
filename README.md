@@ -131,6 +131,11 @@ windrose.gs
 qcoords.gs 
  
 	Let the user click in a map, an return the world coordinates. 
+
+splitTime.gs
+
+	Return current time as 'YY MM dd hh mm', suitable to write to an
+	ascii file, for example.
 ___________________________________________________________________________
 OPEN MANY FILE
 
